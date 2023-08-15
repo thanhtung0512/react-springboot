@@ -6,7 +6,7 @@ function App() {
   const items = ["Paris", "London", "Moscow", "Luxembourg", "France"];
   const colors = ["Black", "White", "Blue"];
   const handleSelectItem = (item: string) => {
-    console.log(item);
+    console.log(item + "Pass function via props");
   }
   return (
     <Fragment>

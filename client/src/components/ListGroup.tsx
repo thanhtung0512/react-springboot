@@ -4,11 +4,17 @@ import { MouseEvent } from "react";
 interface Props {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   // Hook
   const [selectedIndex, setSelectedIndex] = useState(0);
+
+
+  const testHandler = (event: MouseEvent) => {
+    console.log(event.movementX + " from testHandler");
+  }
 
   if (items.length === 0) return <h1>No item found</h1>;
   else {
@@ -24,8 +30,10 @@ function ListGroup({ items, heading }: Props) {
                   : "list-group-item"
               }
               key={item}
-              onClick={() => {
+              onClick={(event) => {
                 setSelectedIndex(i);
+                onSelectItem(item);
+                testHandler(event);
               }}
             >
               {item}

@@ -5,11 +5,13 @@ import ListGroup from "./components/ListGroup";
 function App() {
   const items = ["Paris", "London", "Moscow", "Luxembourg", "France"];
   const colors = ["Black", "White", "Blue"];
+  const handleSelectItem = (item: string) => {
+    console.log(item);
+  }
   return (
     <Fragment>
-      <ListGroup items={items} heading={"Cities"} />
+      <ListGroup items={items} heading={"Cities"} onSelectItem={handleSelectItem} />
 
-      <ListGroup items={colors} heading={"Colors"} />
     </Fragment>
   );
 }

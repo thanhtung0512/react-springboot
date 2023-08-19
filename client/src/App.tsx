@@ -4,6 +4,9 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 function App() {
+  const items = ['a', 'b', 'c'];
+  const heading = 'List';
+
   const [isClickButton, setIsClickButton] = useState(false);
   const [isShow,setIsShow] = useState(false);
   const hanleOnClick = () => {
@@ -19,6 +22,8 @@ function App() {
 
   return (
     <Fragment>
+
+      
       {isClickButton === true && isShow === true ? (
         <Alert>
           Hello <span>World</span>
@@ -28,6 +33,10 @@ function App() {
       <Button color="secondary" onClick={hanleOnClick}>
         MyButton
       </Button>
+
+      <ListGroup items={items} heading={heading} onSelectItem={function (item: string): void {
+        console.log(item);
+      } }></ListGroup>
     </Fragment>
   );
 }

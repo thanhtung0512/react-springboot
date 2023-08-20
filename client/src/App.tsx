@@ -17,17 +17,29 @@ function App() {
     },
   });
 
+  const [tags, setTags] = useState(["happy", "cheerful"]);
+
   const handleClick = () => {
     // setDrink({ ...drink, price: 6 });
-    setCustomer({
-      ...customer,
-      address: { ...customer.address, zipCode: 94112 },
-    });
+    // setCustomer({
+    //   ...customer,
+    //   address: { ...customer.address, zipCode: 94112 },
+    // });
+
+    setTags([...tags, "exciting"]);
+
+    //Remove
+    setTags(tags.filter((tag) => tag !== "happy"));
+
+    //Update
+    setTags(tags.map((tag) => (tag === "happy" ? "hapiness" : tag)));
   };
 
   return (
     <Fragment>
-      {customer.address.zipCode}
+      {tags.map((tag) => (
+        <div>{tag}</div>
+      ))}
       <button onClick={handleClick}>Click me</button>
     </Fragment>
   );

@@ -4,23 +4,19 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 function App() {
+  const [drink, setDrink] = useState({
+    title: "Americano",
+    price: 5,
+  });
 
-  const [person, setPerson] = useState({
-    firstName: '',
-    lastName: '',
-    contact: {
-      address: {
-        street: ''
-      }
-    }
-  })
-  
+  const handleClick = () => {
+    setDrink({...drink,price: 6});
+  };
 
   return (
     <Fragment>
-      <Message/>
-      <Message/>
-      <Message/>
+      {drink.price}
+      <button onClick={handleClick}>Click me</button>
     </Fragment>
   );
 }

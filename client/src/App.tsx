@@ -1,9 +1,6 @@
 import { Fragment, useState } from "react";
-import NavBar from "./components/NavBar";
-import Cart from "./components/Cart";
-
-import ExpandableText from "./components/ExpandableText";
-import { current } from "immer";
+import Form from "./components/Form";
+import MyComponent from "./components/MyComponent";
 
 function App() {
 
@@ -19,9 +16,8 @@ function App() {
 
   return (
     <>
-      <ExpandableText maxChar={currentNumberChar} handleClick={handleClick}>
-        {text}
-      </ExpandableText>
+      {/* <Form></Form> */}
+      <MyComponent/>
     </>
   );
 }
